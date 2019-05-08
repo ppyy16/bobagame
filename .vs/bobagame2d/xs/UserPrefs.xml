@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{7BBA342A-DCAB-0013-0F84-C0FB7635BA61}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DestroyonContact.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/DestroyonContact.cs" Line="8" Column="9" />
+      <File FileName="Assets/Scripts/DestroyonContact.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Bubblemove.cs" Line="8" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +12,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Resources" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="DestroyonContact.cs" selected="True" />
+                <Node name="GameController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
