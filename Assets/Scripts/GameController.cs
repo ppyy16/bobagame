@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameController : MonoBehaviour
     private float maxWidth;
     public float timeleft;
     public GameObject ball;
+    public Text timetext;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,11 @@ public class GameController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        timeleft -= Time.deltaTime; 
+        timeleft -= Time.deltaTime;
+        string remainingstringtime = "Time: " + Mathf.RoundToInt(timeleft).ToString();
+        print(remainingstringtime);
+        timetext.text = remainingstringtime;
+        
     }
 
     IEnumerator Spawn() {
