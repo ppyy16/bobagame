@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour
 
     public GameObject startbtn;
 
+
+    private bool playing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class GameController : MonoBehaviour
             cam = Camera.main;
 
         }
+        playing = false;
 
         //regid body components
         rb = GetComponent<Rigidbody2D>();
@@ -51,16 +55,21 @@ public class GameController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        timeleft -= Time.deltaTime;
-        if (timeleft < 0) {
-            timeleft = 0;
+        if (playing)
+        {
+            timeleft -= Time.deltaTime;
+            if (timeleft < 0)
+            {
+                timeleft = 0;
+            }
+            timetext.text = "Time: " + Mathf.RoundToInt(timeleft).ToString();
         }
-        timetext.text = "Time: " + Mathf.RoundToInt(timeleft).ToString();
-
     }
 
     IEnumerator Spawn() {
         yield return new WaitForSeconds(0.0f);
+        playing = true;
+
         while (timeleft > 0)
         {
             Vector3 spawnPosition = new Vector3(Random.Range(-maxWidth+0.5f, maxWidth-0.5f), 13, 0.0f);
