@@ -13,6 +13,10 @@ public class GameController : MonoBehaviour
     public GameObject ball;
     public Text timetext;
 
+
+    public GameObject restartbtn;
+    public GameObject gameovertxt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +59,11 @@ public class GameController : MonoBehaviour
 
             yield return new WaitForSeconds(Random.Range(0.3f, 1.0f));
         }
+
+        yield return new WaitForSeconds(2.0f);
+        gameovertxt.SetActive(true);
+        yield return new WaitForSeconds(2.04f);
+        restartbtn.SetActive(true);
 
     }
 }
