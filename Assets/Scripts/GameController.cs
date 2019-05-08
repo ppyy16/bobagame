@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     private Rigidbody2D rb;
     private Renderer ballrenderer;
     private float maxWidth;
-
+    public float timeleft;
     public GameObject ball;
 
     // Start is called before the first frame update
@@ -33,11 +33,16 @@ public class GameController : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        timeleft -= Time.deltaTime; 
+    }
+
     IEnumerator Spawn() {
         yield return new WaitForSeconds(1.0f);
-        while (true)
+        while (timeleft > 0)
         {
-            Vector3 spawnPosition = new Vector3(Random.Range(-maxWidth, maxWidth), 13, 0.0f);
+            Vector3 spawnPosition = new Vector3(Random.Range(-maxWidth+0.5f, maxWidth-0.5f), 13, 0.0f);
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(ball, spawnPosition, spawnRotation);
 
