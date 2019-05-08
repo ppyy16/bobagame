@@ -9,6 +9,9 @@ public class Bubblemove : MonoBehaviour
     private Rigidbody2D rb;
     private Renderer tearenderer;
     private float maxWidth;
+
+    private bool cancontrol;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +19,7 @@ public class Bubblemove : MonoBehaviour
             cam = Camera.main;
 
         }
-
+        cancontrol = false;
         //regid body components
         rb = GetComponent<Rigidbody2D>();
         tearenderer = GetComponent<Renderer>();
@@ -32,14 +35,20 @@ public class Bubblemove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //inital position hold down control
-        Vector3 rawPosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 targetPosition = new Vector3(rawPosition.x, 0.0f, 0.0f);
-        float targetWidth = Mathf.Clamp(targetPosition.x, -maxWidth, maxWidth);
-        targetPosition = new Vector3(targetWidth, targetPosition.y, targetPosition.z);
-        rb.MovePosition(targetPosition);
+        if (cancontrol)
+        {
+            //inital position hold down control
+            Vector3 rawPosition = cam.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 targetPosition = new Vector3(rawPosition.x, 0.0f, 0.0f);
+            float targetWidth = Mathf.Clamp(targetPosition.x, -maxWidth, maxWidth);
+            targetPosition = new Vector3(targetWidth, targetPosition.y, targetPosition.z);
+            rb.MovePosition(targetPosition);
 
+        }
 
-
+    }
+    public void ToggleControl(bool toggle) {
+        cancontrol = toggle;
+    
     }
 }

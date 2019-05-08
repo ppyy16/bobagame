@@ -23,6 +23,10 @@ public class GameController : MonoBehaviour
 
     private bool playing;
 
+
+
+    public Bubblemove Bubblemove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +52,8 @@ public class GameController : MonoBehaviour
     public void StartGame() {
         //splash goes here too
         startbtn.SetActive(false);
+
+        Bubblemove.ToggleControl(true);
         StartCoroutine(Spawn());
 
 
