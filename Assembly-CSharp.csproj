@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Bubblemove.cs" />
     <Compile Include="Assets\Scripts\DestroyonContact.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Restart.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/Parima/bobagame2d/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
