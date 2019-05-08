@@ -38,10 +38,11 @@ public class GameController : MonoBehaviour
     private void FixedUpdate()
     {
         timeleft -= Time.deltaTime;
-        string remainingstringtime = "Time: " + Mathf.RoundToInt(timeleft).ToString();
-        print(remainingstringtime);
-        timetext.text = remainingstringtime;
-        
+        if (timeleft < 0) {
+            timeleft = 0;
+        }
+        timetext.text = "Time: " + Mathf.RoundToInt(timeleft).ToString();
+
     }
 
     IEnumerator Spawn() {
