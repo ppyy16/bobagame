@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     public GameObject restartbtn;
     public GameObject gameovertxt;
 
+
+    public GameObject startbtn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,13 @@ public class GameController : MonoBehaviour
         Vector3 targetWidth = cam.ScreenToWorldPoint(uppercorner);
         float ballWidth = ballrenderer.bounds.extents.x;
         maxWidth = targetWidth.x - ballWidth;
+
+
+    }
+
+    public void StartGame() {
+        //splash goes here too
+        startbtn.SetActive(false);
         StartCoroutine(Spawn());
 
 
@@ -50,7 +60,7 @@ public class GameController : MonoBehaviour
     }
 
     IEnumerator Spawn() {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.0f);
         while (timeleft > 0)
         {
             Vector3 spawnPosition = new Vector3(Random.Range(-maxWidth+0.5f, maxWidth-0.5f), 13, 0.0f);
@@ -60,9 +70,9 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(0.3f, 1.0f));
         }
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         gameovertxt.SetActive(true);
-        yield return new WaitForSeconds(2.04f);
+        yield return new WaitForSeconds(1.02f);
         restartbtn.SetActive(true);
 
     }
