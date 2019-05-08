@@ -62,7 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\Bubblemove.cs" />
+    <Compile Include="Assets\Scripts\Bubblemove.cs" />
+    <Compile Include="Assets\Scripts\DestroyonContact.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/Parima/bobagame2d/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

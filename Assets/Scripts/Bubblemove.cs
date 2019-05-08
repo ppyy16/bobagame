@@ -23,13 +23,14 @@ public class Bubblemove : MonoBehaviour
 
         Vector3 uppercorner = new Vector3(Screen.width, Screen.height, 0.0f);
         Vector3 targetWidth = cam.ScreenToWorldPoint(uppercorner);
-        maxWidth = targetWidth.x;
+        float cupWidth = tearenderer.bounds.extents.x;
+        maxWidth = targetWidth.x - cupWidth;
 
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //inital position hold down control
         Vector3 rawPosition = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -37,6 +38,8 @@ public class Bubblemove : MonoBehaviour
         float targetWidth = Mathf.Clamp(targetPosition.x, -maxWidth, maxWidth);
         targetPosition = new Vector3(targetWidth, targetPosition.y, targetPosition.z);
         rb.MovePosition(targetPosition);
+
+
 
     }
 }
