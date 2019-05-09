@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     private Renderer ballrenderer;
     private float maxWidth;
     public float timeleft;
-    public GameObject ball;
+    public GameObject[] balls;
     public Text timetext;
 
 
@@ -39,8 +39,9 @@ public class GameController : MonoBehaviour
 
         //regid body components
         rb = GetComponent<Rigidbody2D>();
-        ballrenderer = GetComponent<Renderer>();
+        ballrenderer = balls[0].GetComponent<Renderer>();
 
+     
         Vector3 uppercorner = new Vector3(Screen.width, Screen.height, 0.0f);
         Vector3 targetWidth = cam.ScreenToWorldPoint(uppercorner);
         float ballWidth = ballrenderer.bounds.extents.x;
@@ -76,13 +77,16 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(0.0f);
         playing = true;
 
+
         while (timeleft > 0)
         {
+            GameObject ball = balls[Random.Range(0, balls.Length)];
+
             Vector3 spawnPosition = new Vector3(Random.Range(-maxWidth+0.5f, maxWidth-0.5f), 13, 0.0f);
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(ball, spawnPosition, spawnRotation);
 
-            yield return new WaitForSeconds(Random.Range(0.3f, 1.0f));
+            yield return new WaitForSeconds(Random.Range(0.0f, 0.5f));
         }
 
         yield return new WaitForSeconds(1.0f);
