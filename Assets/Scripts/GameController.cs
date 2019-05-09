@@ -89,6 +89,7 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(0.0f, 0.5f));
         }
 
+
         yield return new WaitForSeconds(1.0f);
         gameovertxt.SetActive(true);
         yield return new WaitForSeconds(1.02f);

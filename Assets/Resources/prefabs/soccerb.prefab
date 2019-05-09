@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 6061827234216196676, guid: 2b76ae96ad5e546f4a3797b89617dd4b,
         type: 3}
       propertyPath: m_Name
-      value: poison
+      value: soccerb
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061827234216196676, guid: 2b76ae96ad5e546f4a3797b89617dd4b,
+        type: 3}
+      propertyPath: m_TagString
+      value: soccerball
       objectReference: {fileID: 0}
     - target: {fileID: 6061827234216196664, guid: 2b76ae96ad5e546f4a3797b89617dd4b,
         type: 3}
@@ -67,5 +72,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6061827234216196665, guid: 2b76ae96ad5e546f4a3797b89617dd4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1cae3f069cffa4b0aa1d680c7129bbaf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b76ae96ad5e546f4a3797b89617dd4b, type: 3}

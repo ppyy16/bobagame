@@ -20,12 +20,51 @@ public class Score : MonoBehaviour
         UpdateScore();
     }
 
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        score += ballvalue;
-        print(score);
-        UpdateScore();
+
+        if (collision.gameObject.tag == "poison")
+        {
+            score = score - 3;
+            UpdateScore();
+
+        }
+        else if (collision.gameObject.tag == "basketball")
+        {
+            score = score - 1;
+            UpdateScore();
+        }
+        else if (collision.gameObject.tag == "magicpearl")
+        {
+            score += ballvalue * 3;
+            UpdateScore();
+        }
+
+        else
+        {
+            score += ballvalue;
+            UpdateScore();
+        }
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "poison") {
+    //        score = score -3;
+    //        UpdateScore();
+        
+    //    }
+    //    if (collision.gameObject.tag == "basketball") {
+    //        score = score -1;
+    //        UpdateScore();
+    //    }
+    //    if (collision.gameObject.tag == "magicpearl") {
+    //        score += ballvalue * 3;
+    //        UpdateScore();
+    //    }
+
+
+    //}
 
     void UpdateScore()
     {

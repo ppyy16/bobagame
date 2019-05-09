@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 5156196127043997655, guid: 22f1bdbe354e647c88ba3f9e59693d9b,
         type: 3}
       propertyPath: m_Name
-      value: poison Variant
+      value: basketball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156196127043997655, guid: 22f1bdbe354e647c88ba3f9e59693d9b,
+        type: 3}
+      propertyPath: m_TagString
+      value: basketball
       objectReference: {fileID: 0}
     - target: {fileID: 5156196127043997611, guid: 22f1bdbe354e647c88ba3f9e59693d9b,
         type: 3}
